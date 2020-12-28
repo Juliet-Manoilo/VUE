@@ -32,52 +32,33 @@
 <h3 class="about__title">WE ARE WHAT WE ARE</h3>
 <img class="about__logos" src="../assets/Logos.png" alt="Logos">
     </div>
-   <div id="tabs" class="container">
-  
-    <div class="tabs">
-        <a v-on:click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]">Tab 1</a>
-        <a v-on:click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]">Tab 2</a>
-        <a v-on:click="activetab=3" v-bind:class="[ activetab === 3 ? 'active' : '' ]">Tab 3</a>
-    </div>
-
-    <div class="content">
-        <div v-if="activetab === 1" class="tabcontent">
-            Is this the real life? Is this just fantasy?
-        </div>
-        <div v-if="activetab === 2" class="tabcontent">
-            Caught in a landslide, no escape from reality
-        </div>
-        <div v-if="activetab === 3" class="tabcontent">
-            Open your eyes, look up to the skies and see
-        </div>
-    </div>
-  
-</div>
-  </section>
+   <div class="tabs">
+<tabs />
+  </div>
+ 
+      
+ </section>
 </section>
 </template>
 
 <script>
-
+import Tabs from "../components/tabs"
 
 export default {
   name: 'Home',
   components: {
-    
+    Tabs
   },
-name: 'Tabs',
-  data() {
-     return {
-        activeTab: 1
-     }
+  data () {
+  return {
+    activeTab: 1
+  };
+}
+
 
   
-}}
+};
 </script>
-
-
-     
-    
 <style lang="scss">
 @import '../styles/core/vars.scss';
 .home {
@@ -89,7 +70,7 @@ name: 'Tabs',
   font-weight: 400;
   font-family: $main-font;
   &__top-panel {
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 7%;
     display: flex;
@@ -104,8 +85,18 @@ name: 'Tabs',
     justify-content: space-around;
     font-size: $nav-size;
   }
+  &__nav-links {
+    &:hover {
+      
+opacity: 0.7;
+    }
+    }
+  
   &__logo {
     font-size: 30px;
+    &:hover {
+opacity: 0.7;
+    }
   }
   &__user-buttons {
     font-size: $nav-size;
@@ -131,6 +122,12 @@ name: 'Tabs',
     width: 100%;
     &--search {
       width: 50%;
+&:hover {
+opacity: 0.7;
+    }
+    }
+    &:hover {
+opacity: 0.7;
     }
     
   }
@@ -180,12 +177,18 @@ name: 'Tabs',
   }
   &__shop-link {
     width: 200px;
+    &:hover {
+opacity: 0.7;
+    }
   }
   &__prod-link {
     font-weight: 300px;
     font-size: $link-size;
   line-height: 75px;
   letter-spacing: 5px;
+  &:hover {
+opacity: 0.7;
+    }
   }
   &__vertical-text {
     transform: rotate(270deg);
@@ -251,6 +254,7 @@ left: 50%;
     width: 100%;
     height: 300px;
     position: relative;
+    margin-bottom: 100px;
   }
 }
 
