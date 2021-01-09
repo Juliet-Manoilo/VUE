@@ -8,9 +8,11 @@ import '../src/styles/style.scss'
 
 import vuetify from '@/plugins/vuetify' // path to vuetify export
 
-
+import VueSplide from '@splidejs/vue-splide';
 
 Vue.config.productionTip = false
+
+Vue.use( VueSplide );
 
 new Vue({
   router,

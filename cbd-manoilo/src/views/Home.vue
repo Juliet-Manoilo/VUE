@@ -35,32 +35,61 @@
    <div class="tabs">
 <tabs />
   </div>
- 
-      
+
+<splide><div id="splide" class="splide" >
+	<div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">
+				<img src="../assets/tabs1.png">
+				<h4>Heading 01</h4>
+				<div>
+					Description 01
+				</div>
+			</li>
+			<li class="splide__slide">
+				<img src="../assets/tabs2.png">
+				<h4>Heading 02</h4>
+				<div>
+					Description 02
+				</div>
+			</li>
+		</ul>
+	</div>
+</div> </splide>
  </section>
 </section>
 </template>
 
 <script>
-import Tabs from "../components/tabs"
-
+import Tabs from "../components/tabs";
+import { Splide } from '@splidejs/vue-splide';
+//import Carousel from '../components/carousel.vue';
+document.addEventListener( 'DOMContentLoaded', function () {
+	new Splide( '#splide', {
+		type   : 'loop',
+	perPage: 3,
+	focus  : 'center',
+	} ).mount();
+} );
 export default {
   name: 'Home',
   components: {
-    Tabs
+    Tabs,
+   Splide, 
+   
+    
   },
   data () {
   return {
-    activeTab: 1
-  };
+    
+     };
 }
-
-
   
 };
 </script>
 <style lang="scss">
 @import '../styles/core/vars.scss';
+
 .home {
   min-height: 100vh;
   
